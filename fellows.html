@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+		<!-- Add fancyBox -->
+		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#testing').hide();
+				$('#blam').click(function(){
+				    $.fancybox({
+				    	type: "iframe",
+				    	content:   $('#testing').show(),
+				    	openEffect: 'elastic',
+				    	openSpeed: 'medium',
+				    	openMethod: 'zoomIn'
+				    });
+				});
+				$('#blam1').click(function(){
+				    $.fancybox({
+				    	type: "iframe",
+				    	content:   $('#testing').show()
+				    });
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<div class="fancy" id="blam" rel="gallery1">
+				<div class="pic" style="float:left; background:url('http://ventureforamerica.org/wp-content/uploads/2014/04/holter_christopher.jpg'); background-size:cover; width:125px; height:160px; margin-right:10px; text-align:center;">
+					<div class="overlay" style="width:125px; height:160px; -webkit-transition: opacity .25s ease;">
+						<a class="text" ><br>Chris Holter <br> Brown University 13 <br> Computer Science</a>
+					</div>
+				</div>
+			</div>
+			<a class="fancy" id="blam1" rel="gallery1">
+				<img src="http://ventureforamerica.org/wp-content/uploads/2014/02/Joe-Morrison.jpg" alt="" style="width:125px; height:160px;"/>
+			</a>
+			<a class="fancy" id="blam2" rel="gallery1">
+				<img src="http://ventureforamerica.org/wp-content/uploads/2014/04/galpern_jonathan.jpg" alt="" style="width:125px; height:160px;"/>
+			</a>
+			<a class="fancy" id="blam3" rel="gallery1">
+				<img src="http://ventureforamerica.org/wp-content/uploads/2014/04/seyler_camille.jpg" alt="" style="width:125px; height:160px;"/>
+			</a>
+			<a class="fancy" id="blam4" rel="gallery1">
+				<img src="http://ventureforamerica.org/wp-content/uploads/2014/04/akers_natalie.jpg" alt="" style="width:125px; height:160px;"/>
+			</a>
+		</div>
+		<div id="testing">
+			<div>
+				<div style="float:left; background:url('http://ventureforamerica.org/wp-content/uploads/2014/04/holter_christopher.jpg'); background-size:cover; width:125px; height:160px; padding-right:10px;">
+				</div>
+				<div style="block;">
+					<a>Chris graduated from Brown University with a degree in Computer Science. Chris has always been interested in entrepreneurship, starting a moped resale business in high school, interning for a tech startup in Silicon Valley, and working with a local non-profit startup his senior year at Brown. While at Brown, Chris was a four-year starter on the Men’s Varsity Squash Team and served as co-captain his senior year. After graduation, Chris joined an IT consulting firm back in his hometown of Baltimore. Having worked on both sides of the spectrum, Chris is now sure that the startup scene is where he belongs. In his free time, Chris enjoys finding new music, traveling, and eating great food.</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<footer>
+	</footer>
+</html>
+
+
+
