@@ -8,35 +8,66 @@
 		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('#testing').hide();
+				$('#holter').hide();
+				$('#morrison').hide();
 				$('#blam').click(function(){
+				    /*var leftMargin = $('body').width()/2-$('#actual').position().left;
+				    var topMargin = $('body').height()/2-$('#actual').position().top;*/
+				    $.attr('rel', 'gallery')
 				    $.fancybox({
 				    	type: "iframe",
-				    	content:   $('#testing').show(),
-				    	openEffect: 'elastic',
-				    	openSpeed: 'medium',
-				    	openMethod: 'zoomIn'
+				    	content:   $('#holter').show(),
+				    	openEffect: 'fade',
+				    	openSpeed: 'slow',
+				    	//openMethod: 'changeIn',
+				    	margin: [0, 0, 0, 0],
+				    	arrows:'true'
 				    });
 				});
 				$('#blam1').click(function(){
+				    $.attr('rel', 'gallery')
 				    $.fancybox({
 				    	type: "iframe",
-				    	content:   $('#testing').show()
+				    	content:   $('#morrison').show(),
+				    	openEffect: 'fade',
+				    	openSpeed: 'slow',
+				    	//openMethod: 'changeIn',
+				    	margin: [0, 0, 0, 0],
+				    	arrows: 'true'
 				    });
 				});
+				//on menu item selected
+					//if box checked on
+						$.each($('.fancy')), function() {
+							if ($(this).attr('**selected box category i.e. gender**')=='**selected box name i.e. male**') {
+								$(this).show();
+							}
+							else {
+								$(this).hide();
+							}
+						}
+					//else
+						$.each($('.fellow')), function() {
+							if ($(this).attr('**selected box**')) {
+								$(this).hide();
+							}
+						}
 			});
 		</script>
 	</head>
 	<body>
-		<div>
-			<div class="fancy" id="blam" rel="gallery1">
-				<div class="pic" style="float:left; background:url('http://ventureforamerica.org/wp-content/uploads/2014/04/holter_christopher.jpg'); background-size:cover; width:125px; height:160px; margin-right:10px; text-align:center;">
-					<div class="overlay" style="width:125px; height:160px; -webkit-transition: opacity .25s ease;">
-						<a class="text" ><br>Chris Holter <br> Brown University 13 <br> Computer Science</a>
+		<div id="fellows">
+			<div class="fancy" data-fancybox-group="gallery" id="blam" rel="gallery1">
+				<div class="pic" id="actual" style="float:left; background:url('http://ventureforamerica.org/wp-content/uploads/2014/04/holter_christopher.jpg'); background-size:cover; width:125px; height:160px; margin-right:10px; text-align:center;">
+					<div class="overlay" style="width:125px; height:160px;">
+						<a class="text" ><br><br><br>Chris Holter <br> Brown University '13 <br> Computer Science</a>
 					</div>
 				</div>
 			</div>
-			<a class="fancy" id="blam1" rel="gallery1">
+			<script> $('#blam').data("city", "baltimore"); $('#blam').data("gender", "male"); $('#blam').data("class", "14"); $('#blam').data("company", "zerofox"); 
+			</script>
+
+			<a class="fancy" data-fancybox-group="gallery" id="blam1" rel="gallery1">
 				<img src="http://ventureforamerica.org/wp-content/uploads/2014/02/Joe-Morrison.jpg" alt="" style="width:125px; height:160px;"/>
 			</a>
 			<a class="fancy" id="blam2" rel="gallery1">
@@ -49,12 +80,21 @@
 				<img src="http://ventureforamerica.org/wp-content/uploads/2014/04/akers_natalie.jpg" alt="" style="width:125px; height:160px;"/>
 			</a>
 		</div>
-		<div id="testing">
-			<div>
-				<div style="float:left; background:url('http://ventureforamerica.org/wp-content/uploads/2014/04/holter_christopher.jpg'); background-size:cover; width:125px; height:160px; padding-right:10px;">
+		<div id="holter"  data-fancybox-group="gallery" >
+			<div style="display:inline-block; margin:5px;">
+				<div style="float:left; background:url('http://ventureforamerica.org/wp-content/uploads/2014/04/holter_christopher.jpg'); background-size:cover; width:167px; height:213px; padding-right:10px;">
 				</div>
-				<div style="block;">
+				<div style="margin-left:190px;">
 					<a>Chris graduated from Brown University with a degree in Computer Science. Chris has always been interested in entrepreneurship, starting a moped resale business in high school, interning for a tech startup in Silicon Valley, and working with a local non-profit startup his senior year at Brown. While at Brown, Chris was a four-year starter on the Men’s Varsity Squash Team and served as co-captain his senior year. After graduation, Chris joined an IT consulting firm back in his hometown of Baltimore. Having worked on both sides of the spectrum, Chris is now sure that the startup scene is where he belongs. In his free time, Chris enjoys finding new music, traveling, and eating great food.</a>
+				</div>
+			</div>
+		</div>
+		<div id="morrison"  data-fancybox-group="gallery" >
+			<div style="display:inline-block; margin:5px;">
+				<div style="float:left; background:url('http://ventureforamerica.org/wp-content/uploads/2014/02/Joe-Morrison.jpg'); background-size:cover; width:167px; height:213px; padding-right:10px;">
+				</div>
+				<div style="margin-left:190px;">
+					<a>Joe is a senior Religion major at Davidson College in North Carolina. He is the founder of Pax Backpacks, a social venture that supports after school programming for low-income middle school students through the sale of a signature line of American-made daypacks. As part of Pax’s social mission, Joe teaches an expanded learning day apprenticeship called “How to Start a Business,” in which he guides a class of sixth graders as they choose a product, build a brand, and launch a company over the course of nine weeks. He is also a Bonner Scholar at Davidson, completing 140 hours of service each semester.</a>
 				</div>
 			</div>
 		</div>
