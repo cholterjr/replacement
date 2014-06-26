@@ -9,7 +9,23 @@
 	</head>
 	<body>
 		<script>
-		$('.cities').click(function(e){
+		$(document).ready(function() {
+			$('#onePopup').hide();
+			$('.company').click(function(){
+			    var id = "#onePopup";
+			    console.log(id);
+			    $.attr('rel', 'gallery')
+			    $.fancybox({
+			    	type: "iframe",
+			    	content:   $(id).show(),
+			    	openEffect: 'fade',
+			    	openSpeed: 'medium',
+			    	margin: [0, 0, 0, 0],
+			    	arrows:'true'
+			    });
+			});
+		});
+		/*$('.cities').click(function(e){
 			var $city = $(this).attr('id');
 			.each($('.company'), function () {
 				if ($(this).data("city")==$city) {
@@ -19,10 +35,31 @@
 					$(this).hide();
 				}
 			});
-		});
+		});*/
 		</script>
 		<div id="company-container">
-			
+			<div class="company" data-fancybox-group="gallery" id="oneBox">
+		        <div class="pic" id="actual" style= 
+		        "background:url('http://ventureforamerica.org/wp-content/uploads/2014/02/DUNBAR_CROPPED.png') left center; background-size:contain; background-repeat: no-repeat; width:126px; margin-right:10px; text-align:center; vertical-align:middle;">
+		        <div class="overlay" style="width:126px; font-size:10px;">
+		                <a class="text">
+		                <br>
+		                Dunbar Digital Armor<br>
+		                Baltimore</a>
+		            </div>
+		        </div>
+		    </div><script>
+			/*$('#koglmeierBox').data("city", "NA"); $('#koglmeierBox').data("gender", "ADD IN"); $('#koglmeierBox').data("class", "12"); $('#koglmeierBox').data("company", "Roadtrippers");*/
+		    </script>
+
+		    <div class="popup" data-fancybox-group="gallery" id="onePopup">
+		        <div style="display:inline-block; margin:5px;">
+		            <div>
+		            	<h2 style="text-align:center;">Dunbar Digital Armor</h2>
+		                <a>Dunbar Digital Armor provides industry leading cyber-security solutions through a subscription model. By partnering with best-of-breed technologies to provide a holistic approach to information security, Dunbar Digital Armor delivers Security-as-a-Service though a rapidly deployable digital platform that unifies threat management and provides visibility into an organization’s risk posture.</a>
+		            </div>
+		        </div>
+		    </div>
 		</div>
 	</body>
 <div>
